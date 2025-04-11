@@ -9,7 +9,7 @@ class cliente{
     public function __construct($nombre,$apellido,$estadoCliente,$tipo,$dni){
         $this->nombre=$nombre;
         $this->apellido=$apellido;
-        $this->estadoCliente=$estadoCliente;
+        $this->estadoCliente=$estadoCliente; //bool
         $this->tipo=$tipo;
         $this->dni=$dni;
     }
@@ -50,6 +50,11 @@ class cliente{
     }
 
     public function __toString(){
-        return "nombre:".$this->getNombre()."\napellido:".$this->getApellido()."\nestado del cliente:".$this->getEstadoCliente()."\ntipo:".$this->getTipo()."\nDNI:".$this->getDni()."\n";
+        if($this->getEstadoCliente()){
+            $estado="activo";
+        }else{
+            $estado="baja";
+        }
+        return "nombre:".$this->getNombre()."\napellido:".$this->getApellido()."\nestado del cliente:".$estado."\ntipo:".$this->getTipo()."\nDNI:".$this->getDni()."\n";
     }
 }

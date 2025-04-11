@@ -69,30 +69,34 @@ class empresa{
     }
 
     public function registrarVenta($arrayCodigosMoto,$cliente){
-        $cantM=count($this->getArrayMotos());
-        $cant=count($arrayCodigosMoto);
-        $motos=$this->getArrayMotos();
+        $cantM=count($this->getArrayMotos()); //cantidad de elementos del array motos
+        $cant=count($arrayCodigosMoto); //cantidad de codigsos de motos
+        $motos=$this->getArrayMotos(); //obtener el array motos
 
-        $ventass=$this->getArrayVentas();
-        $cantV=count($this->getArrayVentas());
-        $ventas=new venta($cantV+1,23.11,$cliente);
+        $ventass=$this->getArrayVentas(); //obtener array ventas
+        $cantV=count($this->getArrayVentas()); //cantidad de elementos de ventas
+        $ventas=new venta($cantV+1,23.11,$cliente); //crear una nueva venta
 
-        if($cliente->getEstadoCliente()=="baja"){
+        $tex=0;
+        if(!$cliente->getEstadoCliente()){
             //$tex="no se puede realizar la venta porque el cliente esta dado de baja";
             $tex=-1;
         }else{
             
-            for($i=0;$i<$cant;$i++){
-                for($j=0;$j<$cantM;$j++){
+            for($i=0;$i<$cant;$i++){//para los codigos
+                $j=0;
+                $logic=true;
+                while($j<$cantM && $logic){
                     if($arrayCodigosMoto[$i]==$motos[$j]->getCodigo()){
-                        $tex=$ventas->incorporarMoto($motos[$i]);
+                        $tex+=$ventas->incorporarMoto($motos[$j]);
+                        $logic=false;
                     }
+                    $j++;
                 }
-                
                 
             }
             
-            $this->setArrayVentas($ventass[]=$ventas);
+            $this->setArrayVentas($ventas);
         }
         return $tex;
     }

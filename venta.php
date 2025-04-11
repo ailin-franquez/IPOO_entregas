@@ -53,7 +53,7 @@ class venta{
     
     public function incorporarMoto($moto){
         //$tex="";
-        if($this->cliente->getEstadoCliente()=="baja"){
+        if(!$this->cliente->getEstadoCliente()){
             //$tex="no se puede realizar la venta porque el cliente esta dado de baja";
             $tex=-1;
         }else{
@@ -64,7 +64,8 @@ class venta{
             }else{
                 $this->setArrayMotos($moto);
                 $moto->setActiva(false);
-                $tex=$this->setPrecioFinal($this->getPrecioFinal()+$venta);
+                $this->setPrecioFinal($this->getPrecioFinal()+$venta);
+                $tex=$this->getPrecioFinal();
             }
         }
         return $tex;

@@ -19,8 +19,8 @@ include_once "empresa.php";
     $dni=trim(fgets(STDIN));
 */
 
-$cliente1=new cliente("mariano","mouglee","activo","dni",45979618);
-$cliente2=new cliente("guillermo","nuñez","activo","dni",26960806);
+$cliente1=new cliente("mariano","mouglee",true,"dni",45979618);
+$cliente2=new cliente("guillermo","nuñez",true,"dni",26960806);
 $arrayClientes=[
     $cliente1,
     $cliente2,
@@ -47,4 +47,4 @@ echo "\n".$empresa->registrarVenta($arrayCodigosMoto=[0],$cliente2);
 echo "\n".$empresa->registrarVenta($arrayCodigosMoto=[2],$cliente2);
 echo "\n".$empresa->retornarVentasXCliente("dni",45979618);
 echo "\n".$empresa->retornarVentasXCliente("dni",26960806);
-//echo "\n".$empresa->__toString();
+//echo "\n".$empresa->__toString(); 
