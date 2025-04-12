@@ -1,6 +1,6 @@
 <?php 
 class obj{
-    private $;
+    private $ ;
     private $ ;
     private $ ;
     private $ ;
@@ -18,51 +18,57 @@ class obj{
         $this-> =$ ;
     }
 
-    public function get (){
+    public function get_(){
         return $this-> ;
-    }public function set ($var){
+    }public function set_($var){
         $this-> =$var;
     }
 
-    public function get (){
+    public function get_(){
         return $this-> ;
-    }public function set ($var){
+    }public function set_($var){
         $this-> =$var;
     }
 
-    public function get (){
+    public function get_(){
         return $this-> ;
-    }public function set ($var){
+    }public function set_($var){
         $this-> =$var;
     }
 
-    public function get (){
+    public function get_(){
         return $this-> ;
-    }public function set ($var){
+    }public function set_($var){
         $this-> =$var;
     }
 
-    public function get (){
+    public function get_(){
         return $this-> ;
-    }public function set ($var){
+    }public function set_($var){
         $this-> =$var;
     }
 
-    public function get (){
+    public function get_(){
         return $this-> ;
-    }public function set ($var){
+    }public function set_($var){
         $this-> =$var;
     }
 
-    public function get (){
+    public function get_(){
         return $this-> ;
-    }public function set ($var){
+    }public function set_($var){
         $this-> =$var;
     }
 
     public function __toString(){
+        $array=$this->get_();
+        foreach($array as $indice){
+            $cadena.=$indice."\n";
+        }
 
-        return ;
+        $tex="\n:".$this->get_(). ;
+        $tex.="\n:".$this->get_().;
+        return $tex;
     }
 }
 ?>
