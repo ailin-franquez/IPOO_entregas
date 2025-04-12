@@ -1,6 +1,6 @@
 <?php 
 class obj{
-    private $ ;
+    private $;
     private $ ;
     private $ ;
     private $ ;
