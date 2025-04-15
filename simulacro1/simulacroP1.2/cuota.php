@@ -46,8 +46,8 @@ class cuota{
             $cuotaPagada="cancelada";
         }
 
-        $tex="\nnumero:".$this->get_numero().="\nmonto cuota:".$this->get_monto_cuota();
-        $tex.="\nmonto interes:".$this->get_monto_interes().="\ncuota pagada:".$cuotaPagada;
+        $tex="\nnumero:".$this->get_numero()."\nmonto cuota:".$this->get_monto_cuota();
+        $tex.="\nmonto interes:".$this->get_monto_interes()."\ncuota pagada:".$cuotaPagada;
         return $tex;
     }
 
@@ -55,7 +55,9 @@ class cuota{
     * que deben ser aplicados
     */
     public function darMontoFinal(){
-        
+        $monto=$this->get_monto_cuota();
+        $interes=$this->get_monto_interes();
+        return $monto+$interes;
     }
 }
 ?>
