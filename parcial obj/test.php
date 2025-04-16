@@ -16,5 +16,6 @@ $aerolinea=set_col_vuelos_programados($col_);
 $aerolinea2=set_col_vuelos_programados($col_2);
 
 $aerolinea->ventaAutomatica(3,$fecha,"cancun");
-
+//falto la consigna d promedio por monto que creo que era la 29.
+//perdon profe
 ?>
